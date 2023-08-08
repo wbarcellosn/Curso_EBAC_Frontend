@@ -4,113 +4,49 @@
     box-sizing: border-box;
 }
 
-body > header {
-    background-color: #2f3640;
-    color: #f5f6fa;
-    padding: 16px 0;
+h1 {
+    text-align: center;
+    margin-top: 40px;
 }
 
-header li {
-    display: inline;
-    font-family: Arial, Helvetica, sans-serif;
+form {
+    width: 350px;
+    margin: 40px auto;
+}
+
+label {
+    display: block;
+    width: 350px;
+    padding: 10px 5px;
     font-weight: bold;
-    margin-left: 16px;
+
 }
 
-header li a {
-    color: #f5f6fa;
-    text-decoration: none;
+input {
+    display: block;
+    width: 350px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+
 }
 
-header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+button {
+    padding: 5px 16px;
+    color: black;
+    background-color: springgreen;
+    border: 0.5px solid black;
+    font-weight: bold;
 }
 
-.container {
-    width: 1366px;
+button:hover {
+    cursor: pointer;
+    background-color: rgb(135, 253, 135);
+}
+
+p {
+    display: none;
+    width: 350px;
     margin: 0 auto;
-}
-
-.articles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.articles article {
-    width: 30%;
-    margin-bottom: 16px;
-}
-
-.articles article h3 {
-    margin: 8px 0;
-    font-size: 24px;
-}
-
-.articles article img {
-    /* height: 180px; */
-    width: 100%;
-}
-
-.articles article p {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.articles article a {
-    color: white;
-    padding: 8px;
-    border-radius: 10px;
-    margin-top: 8px;
-    text-decoration: none;
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-
-}
-
-.articles article a:hover {
-    text-decoration: underline;
-}
-
-section {
-    padding: 16px 0;
-}
-
-section h2 {
-    margin-bottom: 16px;
-    font-size: 32px;
-}
-
-#sports {
-    background-color: rgba(0, 255, 0 , 0.1);
-}
-
-#sports .articles article a {
-    background-color: #009432;
-}
-
-#economy {
-    background-color: #f8f59f
-}
-
-#economy .articles article a {
-    background-color: #ff9f1a;
-}
-
-#entertainment {
-    background-color: #d68fff
-}
-
-#entertainment .articles article a {
-    background-color: #6001b9;
-}
-
-#technology {
-    background-color: #a5bdfd
-}
-
-#technology .articles article a {
-    background-color: #0c0477;
+    padding: 10px;
 }
