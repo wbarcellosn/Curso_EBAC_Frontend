@@ -1,44 +1,40 @@
-const form = document.getElementById('formulario');
-const num1 = document.getElementById('numero-1');
-const num2 = document.getElementById('numero-2');
+$(document).ready(() => {
 
+    let cont = 1;
 
-form.addEventListener('submit', (e) => {
+    $('#formulario').on('submit', (e) => {
+        e.preventDefault();
 
-    e.preventDefault();
+        const novaTarefa = $('#tarefa').val();
+        const linha = $(`
+            <div class="itemTarefa" id="itc${cont}">
+                <li id="t${cont}">${novaTarefa}</li>
+                <div class="btns-tarefas">
+                    <i class="fa-solid fa-square-check btn-feito" title="Concluir" id="${cont}"></i>
+                    
+                    <i class="fa-solid fa-rectangle-xmark btn-cancelar" title="Cancelar" id="c${cont}"></i>
+                </div>
+            </div>
+        `);
 
-    const validacaoPositiva = `<b>Formulário válido!</b><br> O número <b>${num2.value}</b> é maior do que o número <b>${num1.value}</b>`;
-    const validacaoNegativa = `<b>Formulário inválido!</b><br> O número <b>${num2.value}</b> não é maior do que o número <b>${num1.value}</b>`;
-    const containerMensagem = document.getElementById('mensagem-validacao');
+        $(linha).appendTo('ul');
+        $('#tarefa').val('');
+        cont++
+    })
 
+    //Marcar como concluída
+    $(document).on('click', '.btn-feito', (e) => {
 
-    if (num2.valueAsNumber > num1.valueAsNumber) {
+        $('#t' + e.target.id).addClass('feito');
 
-        containerMensagem.innerHTML = validacaoPositiva;
-        containerMensagem.style.display = 'block';
-        containerMensagem.style.backgroundColor = 'rgb(135, 253, 135)';
+    })
 
-        num1.value = ' ';
-        num2.value = ' ';
+    //Apagar tarefa
+    $(document).on('click', '.btn-cancelar', (e) => {
 
-        setTimeout(() => {
-            containerMensagem.style.display = 'none';
-        }, 3000);
-
-    }
-
-    else {
-
-        containerMensagem.innerHTML = validacaoNegativa;
-        containerMensagem.style.display = 'block';
-        containerMensagem.style.backgroundColor = 'rgb(250, 139, 139)';
-
-        num1.value = ' ';
-        num2.value = ' ';
-
-        setTimeout(() => {
-            containerMensagem.style.display = 'none';
-        }, 3000);
-    }
+        $('#it' + e.target.id).remove();
+    })
 
 })
+
+
