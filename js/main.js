@@ -9,6 +9,10 @@ $(document).ready(function () {
         placeholder: 'Digite seu CPF'
     })
 
+    $('#cep').mask('00.000-000', {
+        placeholder: 'Digite seu CEP'
+    })
+
 
     $('form').validate({
 
@@ -50,6 +54,10 @@ $(document).ready(function () {
             estado: {
                 required: true
             },
+
+            cep: {
+                required: true
+            }
         },
 
         messages: {
@@ -61,27 +69,12 @@ $(document).ready(function () {
             numero: 'Por favor, informe o número.',
             bairro: 'Por favor, informe seu bairro.',
             cidade: 'Por favor, informe sua cidade.',
-            estado: 'Por favor, informe seu estado.'
-    }
+            estado: 'Por favor, informe seu estado.',
+            cep: 'Por favor, informe seu CEP.'
+        },
+
     })
 
-    $('#avancar').click(() => {
-
-        $('#dadosPessoais').css({display: 'none'});
-        $('#avancar').css({display: 'none'});
-        $('#endereco').css({display: 'block'});
-        $('#voltar').css({display: 'block'});
-        $('#enviar').css({display: 'block'});
-    })
-
-    $('#voltar').click(() => {
-
-        $('#dadosPessoais').css({display: 'block'});
-        $('#avancar').css({display: 'block'});
-        $('#endereco').css({display: 'none'});
-        $('#voltar').css({display: 'none'});
-        $('#enviar').css({display: 'none'});
-    })
 })
 
 
