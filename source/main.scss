@@ -1,0 +1,105 @@
+@use './config/reset.scss';
+@use './config/variaveis.scss';
+@use 'sass:math';
+
+@function pixelParaRem ($alvoEmPixel, $contextoEmPixel: 16px) {
+    @return math.div($alvoEmPixel, $contextoEmPixel)+rem;
+}
+
+body {
+    background-color: variaveis.$bodyColor;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: variaveis.$headerColor;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: pixelParaRem(16px) 0;
+    }
+
+    .menu {
+        display: flex;
+
+        li {
+            font-weight: bold;
+            margin-left: pixelParaRem(24px);
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+section {
+    padding: 56px 0;
+
+    .products {
+        margin-top: pixelParaRem(40px);
+        display: grid;
+        grid-template-columns: repeat(3, 32.66%);
+        column-gap: 1%;
+        row-gap: 4%;
+        width: 100%;
+
+        .product-item {
+            img {
+                width: 100%;
+                border-radius: pixelParaRem(16px);
+            }
+
+            .product-button {
+                display: block;
+                background-color: #44bd32;
+                color: #fff;
+                text-align: center;
+                padding: pixelParaRem(8px) 0;
+                border-radius: pixelParaRem(8px);
+                margin-top: pixelParaRem(8px);
+                text-decoration: none;
+
+                &:hover {
+                    background-color: lighten(variaveis.$buttonColor, 5%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variaveis.$tablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    section .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+    section .products {
+        display: block;
+    }
+
+    .product-item {
+        margin-bottom: pixelParaRem(32px);
+    }
+}
