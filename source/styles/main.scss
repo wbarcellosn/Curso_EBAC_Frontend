@@ -1,0 +1,15 @@
+@use 'reset.scss';
+@use 'variaveis.scss';
+
+body {
+    background-color: variaveis.$bodyColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: variaveis.$h1Color;
+    text-transform: uppercase;
+}
