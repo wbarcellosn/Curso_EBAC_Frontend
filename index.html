@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../dev/styles/main.css">
-    <title>Exercicio - M18</title>
+    <title>Exercício boas práticas de CSS</title>
+    <link rel="stylesheet" href="./bem/main.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="titulo"></h1>
+    <div class="produtos">
+        <div class="produto">
+            <img class="produto__imagem" src="https://via.placeholder.com/100x100">
+            <h4 class="produto__nome">Nome do produto</h4>
+            <p class="produto__descricao">
+                Descrição do produto
+            </p>
+        </div>
+        <div class="produto--em-destaque">
+            <img class="produto__imagem" src="https://via.placeholder.com/100x100">
+            <h4 class="produto__nome">Nome do produto</h4>
+            <p class="produto__descricao">
+                Descrição do produto
+            </p>
+        </div>
+        <div class="produto">
+            <img class="produto__imagem" src="https://via.placeholder.com/100x100">
+            <h4 class="produto__nome">Nome do produto</h4>
+            <p class="produto__descricao">
+                Descrição do produto
+            </p>
+        </div>
     </div>
-    <script src="./dev/scripts/main.min.js"></script>
 </body>
 </html>
